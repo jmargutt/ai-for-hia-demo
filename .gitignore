@@ -1,0 +1,4 @@
+.env
+vector-stores/*
+*.xlsx
+__pycache__/*
