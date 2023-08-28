@@ -6,7 +6,8 @@ from test_langchain import langchain_search, langchain_question_answering
 
 st.header("AI for HIA demo")
 st.markdown("Showcase AI functionalities for HIA.")
-st.markdown("Based on [FAQ / Vraagbaak](https://helpfulinformation-faq.redcross.nl/) of the Netherlands Red Cross.")
+st.markdown("Powered by [gpt-3.5-turbo](https://platform.openai.com/docs/guides/gpt).")
+st.markdown("Based on [HIA FAQ / Vraagbaak for Ukraine (English)](https://helpfulinformation-faq.redcross.nl/ukraine).")
 
 st.subheader("Semantic search")
 query = st.text_input('Query', placeholder='e.g. "legal assistance"')
