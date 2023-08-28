@@ -28,12 +28,12 @@ os.environ["OPENAI_API_VERSION"] = "2023-03-15-preview"
 # # map to langchain doc
 # docs = DataFrameLoader(df, page_content_column='text').load()
 
-vs_dir = "vector-stores"
 openai_embeddings = OpenAIEmbeddings(deployment="510-text-embedding", chunk_size=1)
 
+vs_dir = "vector-stores"
 # # print('creating vector store with embeddings')
 # vector_store = Chroma.from_documents(documents=docs, embedding=openai_embeddings, persist_directory=vs_dir)
-
+os.makedirs(vs_dir, exist_ok=True)
 if len(os.listdir(vs_dir)) == 0:
     download_unzip_from_google_drive(os.getenv('ZIPFILE_GOOGLE_ID'), vs_dir)
 vector_store = Chroma(persist_directory=vs_dir, embedding_function=openai_embeddings)
